@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student Grade Prediction System</h1>
+        <p class="subtitle">Predict Your Academic Success</p>
+
+        <form id="predictionForm" class="prediction-form">
+            <div class="form-grid">
+                <div class="form-section">
+                    <h3>Academic Information</h3>
+                    <div class="form-group">
+                        <label for="attendance">Class Attendance (%)</label>
+                        <input type="range" id="attendance" name="attendance" min="0" max="100" value="75">
+                        <span class="range-value">75%</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="studyHours">Study Hours per Week</label>
+                        <input type="range" id="studyHours" name="studyHours" min="0" max="40" value="20">
+                        <span class="range-value">20</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivation">Motivation Level (1-5)</label>
+                        <input type="range" id="motivation" name="motivation" min="1" max="5" value="3">
+                        <span class="range-value">3</span>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-group">
+                        <label for="parentalEducation">Parental Education</label>
+                        <select id="parentalEducation" name="parentalEducation" required>
+                            <option value="High School">High School</option>
+                            <option value="Master">Master</option>
+                            <option value="Doctorate">Doctorate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="extracurricular">Extracurricular Activities</label>
+                        <select id="extracurricular" name="extracurricular" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="resources">Availability of Resources</label>
+                        <select id="resources" name="resources" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="predict-btn">Predict Grade</button>
+        </form>
+
+        <div id="result" class="result-container"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
