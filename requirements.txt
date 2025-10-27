@@ -9,6 +9,3 @@ joblib==1.3.2
 Pillow==10.0.0
 setuptools
 wheel
-# Add any additional dependencies your project requires below
-# For example:
-streamlit-logger
